@@ -340,7 +340,6 @@ function updatePipes() {
       // Adjust horizontal distance permanently every 7 points
       if (score % 7 == 0 && horizontalDistance > minHorizontalDistance) {
         horizontalDistance -= 15;
-        console.log(horizontalDistance);
       }
 
       // Start adjusting vertical gap after every 100 points
