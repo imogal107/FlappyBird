@@ -1,118 +1,4 @@
-// // script.js
-// const canvas = document.getElementById("gameCanvas");
-// const ctx = canvas.getContext("2d");
 
-// canvas.width = 400;
-// canvas.height = 600;
-
-// let bird, pipes, score, gameOver, frames;
-// let gameStarted = false;
-
-// const playButton = document.getElementById("playButton");
-// const gameOverPopup = document.getElementById("gameOverPopup");
-// const retryButton = document.getElementById("retryButton");
-
-// function initializeGame() {
-//   bird = { x: 50, y: 300, width: 20, height: 20, gravity: 0.1, lift: -4, velocity: 0 }; // Reset velocity
-//   pipes = [];
-//   score = 0;
-//   gameOver = false;
-//   frames = 0;
-//   gameStarted = true; // Set to true to enable bird movement on retry
-//   document.getElementById("score").innerText = `Score: ${score}`;
-//   gameOverPopup.classList.add("hidden"); // Hide game over popup
-// }
-
-// // Start the game on the first click of the "Play" button
-// playButton.addEventListener("click", () => {
-//   initializeGame();
-//   playButton.style.display = "none"; // Hide play button
-//   gameLoop();
-// });
-
-// // Retry the game on "Retry" button click
-// retryButton.addEventListener("click", () => {
-//   initializeGame();
-//   gameLoop();
-// });
-
-// // Listen for jump action when game is started
-// document.addEventListener("keydown", () => {
-//   if (gameStarted && !gameOver) {
-//     bird.velocity = bird.lift;
-//   }
-// });
-
-// function drawBird() {
-//   ctx.fillStyle = "yellow";
-//   ctx.fillRect(bird.x, bird.y, bird.width, bird.height);
-// }
-
-// function drawPipes() {
-//   ctx.fillStyle = "green";
-//   pipes.forEach(pipe => {
-//     ctx.fillRect(pipe.x, 0, pipe.width, pipe.top);
-//     ctx.fillRect(pipe.x, canvas.height - pipe.bottom, pipe.width, pipe.bottom);
-//   });
-// }
-
-// function updatePipes() {
-//   if (frames % 150 === 0) {
-//     let gap = 125;
-//     let top = Math.floor(Math.random() * (canvas.height - gap));
-//     let bottom = canvas.height - top - gap;
-//     pipes.push({ x: canvas.width, width: 50, top: top, bottom: bottom });
-//   }
-
-//   pipes.forEach(pipe => {
-//     pipe.x -= 1.5;
-
-//     if (
-//       bird.x < pipe.x + pipe.width &&
-//       bird.x + bird.width > pipe.x &&
-//       (bird.y < pipe.top || bird.y + bird.height > canvas.height - pipe.bottom)
-//     ) {
-//       endGame();
-//     }
-
-//     if (!pipe.passed && pipe.x + pipe.width < bird.x) {
-//       score++;
-//       pipe.passed = true;
-//       document.getElementById("score").innerText = `Score: ${score}`;
-//     }
-//   });
-
-//   pipes = pipes.filter(pipe => pipe.x + pipe.width > 0);
-// }
-
-// function updateBird() {
-//   bird.velocity += bird.gravity;
-//   bird.y += bird.velocity;
-
-//   if (bird.y + bird.height > canvas.height || bird.y < 0) {
-//     endGame();
-//   }
-// }
-
-// function endGame() {
-//   gameOver = true;
-//   gameStarted = false; // Stop bird movement when game is over
-//   gameOverPopup.classList.remove("hidden"); // Show game over popup
-// }
-
-// function gameLoop() {
-//   if (gameOver) return;
-
-//   frames++;
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-//   drawBird();
-//   drawPipes();
-//   updateBird();
-//   updatePipes();
-
-//   requestAnimationFrame(gameLoop);
-// }
 
 // script.js
 const canvas = document.getElementById("gameCanvas");
@@ -369,11 +255,11 @@ let birdImage;
 function drawBird() {
   // Determine the bird color based on the score
   birdImage=pinkBirdImg
-  if (score < 1) {
+  if (score < 50) {
     birdImage = pinkBirdImg;
-  } else if (score < 2) {
+  } else if (score < 100) {
     birdImage = blueBirdImg;
-  } else if (score < 3) {
+  } else if (score < 200) {
     birdImage = greenBirdImg;
   } else {
     birdImage = redBirdImg;
