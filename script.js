@@ -90,14 +90,14 @@ const igMusic = new Audio("./soundeffects/cool-jazz-loops.mp3");
 // Set looping for background and in-game music
 bgMusic.loop = true;
 igMusic.loop = true;
-let isLobbyMusicOn = true;
+let isLobbyMusicOn = false;
 let isInGameMusicOn = true;
 let inLobby = true;
 igMusic.volume = 0.09;
 bgMusic.volume = 0.09;
 
 // Play bgMusic when on the lobby screen
-playLobbyMusic();
+// playLobbyMusic();
 
 //intialize values for game
 function initializeGame() {
@@ -298,17 +298,17 @@ function updatePipes() {
   pipes.forEach((pipe) => {
     let pipeSpeed = 1.5; // Base speed
     if (score > 50 && score <= 60) {
-      pipeSpeed = 1.75;
-    } else if (score > 60 && score <= 75) {
       pipeSpeed = 2;
-    } else if (score > 75 && score <= 90) {
-      pipeSpeed = 2.25;
-    } else if (score > 90 && score <= 105) {
+    } else if (score > 60 && score <= 75) {
       pipeSpeed = 2.5;
-    } else if (score > 105 && score <= 120) {
+    } else if (score > 75 && score <= 90) {
       pipeSpeed = 2.75;
-    } else if (score > 120) {
+    } else if (score > 90 && score <= 105) {
       pipeSpeed = 3;
+    } else if (score > 105 && score <= 120) {
+      pipeSpeed = 3.25;
+    } else if (score > 120) {
+      pipeSpeed = 3.5;
     }
     // Move pipes horizontally
     pipe.x -= pipeSpeed;
