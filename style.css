@@ -1,0 +1,229 @@
+/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #b8f7ff; /* Initial background */
+    transition: background-color 1s ease; /* Smooth transition */
+
+  }
+  
+  #game-container {
+    position: relative;
+    width: 100vw; /* Take up the full width of the screen */
+    height: 100vh; /* Take up the full height of the screen */
+    overflow: hidden;
+    background: url('./images/background/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    border: 2px solid #333;
+  }
+
+  #game-container canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* Ensure the entire game fits without distortion */
+}
+
+  
+  #score {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 25px;
+    color: #fff;
+    display: none;
+  }
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* #bestScoreText {
+    font-size: 32px;
+    font-family: 'Audiowide', sans-serif;
+    color: #ff69b4;
+  } */
+  
+  #bestScore {
+    /* animation: heartbeat 1s ease-in-out infinite; */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 25px;
+    color: #fff;
+}
+
+  
+
+  .lobby-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 30px;
+    background-color: #00000000;
+    color: #fff;
+    font-family: "Trirong ";
+    cursor: pointer;
+    border-radius: 25px;
+    /* border: 1px solid #d356d1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+
+  /* Play button styling */
+  #playButton {
+    padding: 10px 30px;
+    background-color: #00000087;
+    color: #fff;
+    font-family: "Audiowide";
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 2px;
+    border: 1px solid #d356d1;
+  }
+  #soundSettingsButton {
+    text-align: center;
+    width: 190px;
+    padding: 10px 20px;
+    background-color: #00000087;
+    color: #fff;
+    font-family: "Audiowide";
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 2px;
+    border: 1px solid #d356d1;
+  }
+
+  #soundSettingsPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 195px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    display: none;
+  }
+  /* Only show when not hidden */
+#soundSettingsPopup:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+#ssid{
+  font-size: large;
+  margin-bottom: 45px;
+  font-family: "Audiowide";
+}
+.soundtext{
+  font-family: "Audiowide";
+}
+
+#toggleLobbyMusic{
+  font-size: medium;
+  margin-bottom: 10px;
+}
+#toggleInGameMusic{
+  font-size: medium;
+  margin-bottom: 10px;
+ 
+}
+
+
+
+#closeSettingsButton{
+  margin-top: 25px;
+  background-color: #00000041;
+  color: #ffffff;
+  border: 1px solid #d356d1;
+  border-radius: 25px;
+  padding: 2px 0px;
+  width:70px;
+  font-size: 16px;  
+  font-family: 'Audiowide';
+  text-align: center;
+}
+
+
+  
+/* Ensure gameOverPopup starts hidden and can fade in */
+#gameOverPopup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: red;
+  opacity: 0; /* Start hidden with opacity for fade-in effect */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
+  background-color: rgba(0, 0, 0, 0.474);
+  padding: 10px;
+  font-family: "Audiowide", sans-serif;
+  font-size: 28px;
+  border-radius: 8px;
+  display: none; /* Hidden initially */
+}
+
+/* Only show when not hidden */
+#gameOverPopup:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#retryButton{
+  background-color: #00000041;
+  color: #ffffff;
+  border: 1px solid #d356d1;
+  border-radius: 25px;
+  padding: 2px 0px;
+  width:70px;
+  font-size: 18px;  
+  font-family: 'Trirong';
+  text-align: center;
+}
+#backButton{
+  background-color: #00000041;
+  color: #ffffff;
+  border: 1px solid #d356d1;
+  border-radius: 25px;
+  padding: 2px 0px;
+  width:70px;
+  font-size: 18px;  
+  font-family: 'Trirong';
+  text-align: center;
+
+
+}

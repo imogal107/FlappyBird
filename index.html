@@ -1,0 +1,59 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia|Trirong|Audiowide&effect=fire|outline|emboss|shadow-multiple|neon"
+    />
+  </head>
+
+  <body>
+    <div id="game-container">
+      <canvas id="gameCanvas"></canvas>
+      <div id="score" class="font-effect-fire">Score: </div>
+      <div id="bestScore" class="font-effect-fire">Best Score: </div>
+
+      <!-- Play button -->
+      <div class = "lobby-box" id="lobbybox">
+        <div id="playButton" class="overlay-button font-effect-neon">Play</div>
+        <div id="soundSettingsButton" class="overlay-button font-effect-neon">
+          Sound Settings
+        </div>
+      </div>
+
+      <!-- Game Over popup -->
+      <div id="gameOverPopup" class="hidden">
+        <p id="Gameover" class="font-effect-gloss">Game Over</p>
+        <div class="buttons" id="btngroup1">
+          <button id="retryButton" class="font-effect-neon">Retry</button>
+          <button id="backButton" class="font-effect-neon">Back</button>
+        </div>
+      </div>
+
+      <!-- Sound Settings popup -->
+      <div id="soundSettingsPopup" class="hidden">
+        <p class="font-effect-neon" id="ssid">Sound Settings</p>
+        <div>
+          <label  class="soundtext font-effect-neon">
+            <input type="checkbox" id="toggleLobbyMusic" checked />
+            Lobby Music
+          </label>
+        </div>
+        <div>
+          <label class="soundtext font-effect-neon">
+            <input type="checkbox" id="toggleInGameMusic" checked />
+            In-Game Music
+          </label>
+        </div>
+        <button id="closeSettingsButton" class="font-effect-neon">Close</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
