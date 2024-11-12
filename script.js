@@ -106,7 +106,7 @@ function initializeGame() {
     y: 300,
     width: 30,
     height:30,
-    gravity: 0.1,
+    gravity: 0.125,
     lift: -4,
     velocity: 0,
   };
@@ -296,19 +296,19 @@ function updatePipes() {
   }
 
   pipes.forEach((pipe) => {
-    let pipeSpeed = 1.5; // Base speed
+    let pipeSpeed = 2.5; // Base speed
     if (score > 50 && score <= 60) {
-      pipeSpeed = 2;
-    } else if (score > 60 && score <= 75) {
-      pipeSpeed = 2.5;
-    } else if (score > 75 && score <= 90) {
-      pipeSpeed = 2.75;
-    } else if (score > 90 && score <= 105) {
       pipeSpeed = 3;
-    } else if (score > 105 && score <= 120) {
+    } else if (score > 60 && score <= 75) {
       pipeSpeed = 3.25;
+    } else if (score > 75 && score <= 90) {
+      pipeSpeed = 3.75;
+    } else if (score > 90 && score <= 105) {
+      pipeSpeed = 4.25;
+    } else if (score > 105 && score <= 120) {
+      pipeSpeed = 4.75;
     } else if (score > 120) {
-      pipeSpeed = 3.5;
+      pipeSpeed = 5;
     }
     // Move pipes horizontally
     pipe.x -= pipeSpeed;
@@ -392,22 +392,22 @@ function drawSparkles() {
 function updateBird() {
   // Increase bird fall speed slightly with the score (or at specific levels)
   if (score > 50 && score <= 60) {
-    bird.gravity = 0.11;
+    bird.gravity = 0.150;
     bird.lift = -4.1;
   } else if (score > 60 && score <= 75) {
-    bird.gravity = 0.12;
+    bird.gravity = 0.175;
     bird.lift = -4.2;
   } else if (score > 75 && score <= 90) {
-    bird.gravity = 0.13;
+    bird.gravity = 0.200;
     bird.lift = -4.3;
   } else if (score > 90 && score <= 105) {
-    bird.gravity = 0.4;
+    bird.gravity = 0.225;
     bird.lift = -4.4;
   } else if (score > 105 && score <= 120) {
-    bird.gravity = 0.15;
+    bird.gravity = 0.250;
     bird.lift = -4.5;
   } else if (score > 120) {
-    bird.gravity = 0.155;
+    bird.gravity = 0.275;
     bird.lift = -4.45;
   }
 

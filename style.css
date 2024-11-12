@@ -54,12 +54,6 @@ body {
     }
   }
   
-  /* #bestScoreText {
-    font-size: 32px;
-    font-family: 'Audiowide', sans-serif;
-    color: #ff69b4;
-  } */
-  
   #bestScore {
     /* animation: heartbeat 1s ease-in-out infinite; */
     position: absolute;
@@ -200,6 +194,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   
 }
 
